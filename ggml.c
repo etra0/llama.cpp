@@ -15,6 +15,9 @@
 #include <stdio.h>
 #include <float.h>
 
+#define __AVX2__
+#define __AVX512F__
+
 // if C99 - static_assert is noop
 // ref: https://stackoverflow.com/a/53923785/4039976
 #ifndef static_assert
@@ -357,11 +360,10 @@ static const size_t CACHE_LINE_SIZE_F32 = CACHE_LINE_SIZE/sizeof(float);
 // quantization
 //
 
-#define QK 32
 
 // AVX routines provided by GH user Const-me
 // ref: https://github.com/ggerganov/ggml/pull/27#issuecomment-1464934600
-#if __AVX2__
+#if defined(__AVX2__)
 // Unpack 32 4-bit fields into 32 bytes
 // The output vector contains 32 bytes, each one in [ 0 .. 15 ] interval
 inline __m256i bytesFromNibbles( const uint8_t* rsi )
