@@ -5,6 +5,7 @@
 .vscode/
 .DS_Store
 
+x64/
 build/
 build-em/
 build-debug/
@@ -21,3 +22,6 @@ models/*
 
 arm_neon.h
 compile_commands.json
+llama.cpp.vcxproj
+llama.cpp.vcxproj.filters
+llama.cpp.vcxproj.user

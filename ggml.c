@@ -9620,7 +9620,9 @@ static struct ggml_tensor * ggml_graph_get_parent(const struct ggml_cgraph * cgr
 void ggml_graph_dump_dot(const struct ggml_cgraph * gb, const struct ggml_cgraph * gf, const char * filename) {
     char color[16];
 
-    FILE * fp = fopen(filename, "w");
+    FILE* fp;
+    
+    fopen_s(&fp, filename, "w");
     GGML_ASSERT(fp);
 
     fprintf(fp, "digraph G {\n");

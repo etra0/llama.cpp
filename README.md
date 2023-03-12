@@ -171,6 +171,13 @@ The number of files generated for each model is as follows:
 65B -> 8 files
 ```
 
+### Usage - Microsoft Visual Studio Community 2022
+
+1. Open quantize.sln and build executable.
+2. Open llama.sln and build executable.
+
+And follow general instruction for model preparation.
+
 When running the larger models, make sure you have enough disk space to store all the intermediate files.
 
 ## Limitations
